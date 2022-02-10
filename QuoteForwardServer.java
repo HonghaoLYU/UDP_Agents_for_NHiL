@@ -1,6 +1,5 @@
 import java.io.*;
 import java.net.*;
-import java.util.*;
  
 /**
  * This program demonstrates how to implement a UDP server program.
@@ -15,12 +14,13 @@ public class QuoteForwardServer {
  
         try {
             while (true) {
-                socket_in = new DatagramSocket(17);
-                byte[] buffer_recv = new byte[512];
-                DatagramPacket request = new DatagramPacket(buffer_recv, buffer_recv.length);
-                socket_in.receive(request);
-                String mag_recv = new String(buffer_recv, 0, request.getLength());
-                System.out.println("client request msg recived from 17: " + mag_recv);
+                socket_in = new DatagramSocket(17); 
+                byte[] buffer = new byte[512];
+                DatagramPacket response = new DatagramPacket(buffer, buffer.length);
+                socket_in.receive(response);
+ 
+                String quote_msg_res = new String(buffer, 0, response.getLength());
+                System.out.println(quote_msg_res);
                 socket_in.close();
             }
         } catch (SocketException ex) {
