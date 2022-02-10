@@ -35,7 +35,8 @@ public class QuoteForwardClient {
  
                 System.out.println(quote);
                 System.out.println();
- 
+                socket_in.close();
+                
                 Thread.sleep(2000);
             }
  
