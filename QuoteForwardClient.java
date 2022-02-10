@@ -22,6 +22,7 @@ public class QuoteForwardClient {
                 byte[] msg_buffer = "sending msg".getBytes(); 
                 DatagramPacket request = new DatagramPacket(msg_buffer, msg_buffer.length, address, port);
                 socket.send(request);
+                System.out.println(request);
  
                 byte[] buffer = new byte[512];
                 DatagramPacket response = new DatagramPacket(buffer, buffer.length);

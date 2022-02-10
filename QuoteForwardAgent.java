@@ -17,7 +17,7 @@ public class QuoteForwardAgent {
         try {
             while (true) {
                 socket_in = new DatagramSocket(18);
-                socket_out = new DatagramSocket(17);
+                socket_out = new DatagramSocket(18);
                 byte[] buffer_recv = new byte[512];
                 DatagramPacket request = new DatagramPacket(buffer_recv, buffer_recv.length);
                 socket_in.receive(request);
