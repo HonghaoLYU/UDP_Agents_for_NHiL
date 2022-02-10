@@ -10,23 +10,26 @@ import java.net.*;
 public class QuoteForwardClient {
  
     public static void main(String[] args) {
-        String hostname = "192.168.30.35";
-        int port = 18;
+        DatagramSocket socket_in;
+        DatagramSocket socket_out;
  
         try {
+            String hostname = "192.168.30.35";
+            int port = 18;
             InetAddress address = InetAddress.getByName(hostname);
-            DatagramSocket socket = new DatagramSocket();
- 
+
             while (true) {
- 
+                socket_out = new DatagramSocket(18);
                 byte[] msg_buffer = "sending msg".getBytes(); 
                 DatagramPacket request = new DatagramPacket(msg_buffer, msg_buffer.length, address, port);
-                socket.send(request);
+                socket_out.send(request);
                 System.out.println(request);
- 
+                socket_out.close();
+
+                socket_in = new DatagramSocket(18); 
                 byte[] buffer = new byte[512];
                 DatagramPacket response = new DatagramPacket(buffer, buffer.length);
-                socket.receive(response);
+                socket_in.receive(response);
  
                 String quote = new String(buffer, 0, response.getLength());
  

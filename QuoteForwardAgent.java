@@ -31,6 +31,7 @@ public class QuoteForwardAgent {
                 int clientPort = 17;
     
                 DatagramPacket response = new DatagramPacket(buffer, buffer.length, clientAddress, clientPort);
+                System.out.println("msg recived send back: " + response);
                 socket_out.send(response);
                 socket_out.close();
             }
