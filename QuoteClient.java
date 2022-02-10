@@ -36,7 +36,7 @@ public class QuoteClient {
                 System.out.println(quote);
                 System.out.println();
  
-                Thread.sleep(10000);
+                Thread.sleep(2000);
             }
  
         } catch (SocketTimeoutException ex) {
