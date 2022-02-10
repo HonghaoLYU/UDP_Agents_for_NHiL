@@ -40,8 +40,11 @@ public class QuoteServerReaction {
  
     private void service() throws IOException {
         while (true) {
-            DatagramPacket request = new DatagramPacket(new byte[1], 1);
+            byte[] buffer_recv = new byte[512];
+            DatagramPacket request = new DatagramPacket(buffer_recv, buffer_recv.length);
             socket.receive(request);
+            String mag_recv = new String(buffer_recv, 0, request.getLength());
+            System.out.println("client request msg recived: " + mag_recv);
  
             String quote = getRandomQuote();
             byte[] buffer = quote.getBytes();
