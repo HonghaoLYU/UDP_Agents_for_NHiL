@@ -17,14 +17,14 @@ public class QuoteForwardAgent {
         try {
             while (true) {
                 socket_in = new DatagramSocket(18);
-                socket_out = new DatagramSocket(18);
                 byte[] buffer_recv = new byte[512];
                 DatagramPacket request = new DatagramPacket(buffer_recv, buffer_recv.length);
                 socket_in.receive(request);
                 String mag_recv = new String(buffer_recv, 0, request.getLength());
                 System.out.println("client request msg recived: " + mag_recv);
                 socket_in.close();
-    
+                
+                socket_out = new DatagramSocket(18);
                 String quote = "first message back";
                 byte[] buffer = quote.getBytes();
                 InetAddress clientAddress = InetAddress.getByName("192.168.30.55");
