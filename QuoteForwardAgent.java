@@ -25,7 +25,7 @@ public class QuoteForwardAgent {
                 System.out.println("client request msg recived: " + mag_recv);
                 socket_in.close();
 
-                Thread.sleep(1000);
+                Thread.sleep(100);
                 
                 socket_out = new DatagramSocket(18);
                 byte[] buffer = mag_recv.getBytes();
