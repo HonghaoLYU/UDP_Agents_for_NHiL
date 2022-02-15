@@ -7,7 +7,7 @@ import java.net.*;
  *
  * @author Honghao
  */
-public class QuoteForwardAgent {
+public class QuoteForwardAgentTrac {
 
     public static void main(String[] args) throws InterruptedException {
         DatagramSocket socket_in;
@@ -16,7 +16,7 @@ public class QuoteForwardAgent {
         try {
             while (true) {
                 
-                socket_in = new DatagramSocket(18);
+                socket_in = new DatagramSocket(108);
                 byte[] buffer_recv = new byte[512];
                 DatagramPacket request = new DatagramPacket(buffer_recv, buffer_recv.length);
                 socket_in.receive(request);
@@ -27,10 +27,10 @@ public class QuoteForwardAgent {
 
                 // Thread.sleep(100);
                 
-                socket_out = new DatagramSocket(18);
+                socket_out = new DatagramSocket(107);
                 byte[] buffer = mag_recv.getBytes();
                 InetAddress clientAddress = InetAddress.getByName("192.168.30.55");
-                int clientPort = 17;
+                int clientPort = 107;
                 DatagramPacket response = new DatagramPacket(buffer, buffer.length, clientAddress, clientPort);
                 socket_out.send(response);
 
