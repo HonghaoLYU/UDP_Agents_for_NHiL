@@ -23,18 +23,16 @@ public class QuoteForwardClient {
                 socket_out.send(request);
 
                 String quote_msg_req = new String(msg_buffer, 0, request.getLength());
-                System.out.println(quote_msg_req);
+                System.out.println("sending message: " + quote_msg_req);
                 socket_out.close();
 
-                Thread.sleep(2000);
+                // Thread.sleep(2000);
             }
         } catch (SocketTimeoutException ex) {
             System.out.println("Timeout error: " + ex.getMessage());
             ex.printStackTrace();
         } catch (IOException ex) {
             System.out.println("Client error: " + ex.getMessage());
-            ex.printStackTrace();
-        } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
     }

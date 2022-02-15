@@ -9,7 +9,7 @@ import java.net.*;
  */
 public class QuoteForwardAgent {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         DatagramSocket socket_in;
         DatagramSocket socket_out;
  
@@ -24,6 +24,8 @@ public class QuoteForwardAgent {
                 String mag_recv = new String(buffer_recv, 0, request.getLength());
                 System.out.println("client request msg recived: " + mag_recv);
                 socket_in.close();
+
+                Thread.sleep(10000);
                 
                 socket_out = new DatagramSocket(18);
                 byte[] buffer = mag_recv.getBytes();

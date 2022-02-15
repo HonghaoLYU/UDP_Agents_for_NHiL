@@ -20,7 +20,7 @@ public class QuoteForwardServer {
                 socket_in.receive(response);
  
                 String quote_msg_res = new String(buffer, 0, response.getLength());
-                System.out.println(quote_msg_res);
+                System.out.println("recived message: " + quote_msg_res);
                 socket_in.close();
             }
         } catch (SocketException ex) {
