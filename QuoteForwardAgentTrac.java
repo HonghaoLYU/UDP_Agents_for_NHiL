@@ -16,7 +16,7 @@ public class QuoteForwardAgentTrac {
         try {
             while (true) {
                 
-                socket_in = new DatagramSocket(108);
+                socket_in = new DatagramSocket(108) ;
                 byte[] buffer_recv = new byte[512];
                 DatagramPacket request = new DatagramPacket(buffer_recv, buffer_recv.length);
                 socket_in.receive(request);
@@ -25,7 +25,7 @@ public class QuoteForwardAgentTrac {
                 System.out.println("client request msg recived: " + mag_recv);
                 socket_in.close();
 
-                // Thread.sleep(100);
+                Thread.sleep(300);
                 
                 socket_out = new DatagramSocket(107);
                 byte[] buffer = mag_recv.getBytes();
