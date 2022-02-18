@@ -15,8 +15,8 @@ public class QuoteServerBind {
  
     public QuoteServerBind(int port) throws SocketException {
         System.setProperty("java.net.preferIPv4Stack" , "true");
-        // NetworkInterface nif = NetworkInterface.getByName("enxa0cec8ec0096"); 
-        NetworkInterface nif = NetworkInterface.getByName("eno1");
+        NetworkInterface nif = NetworkInterface.getByName("enxa0cec8ebff43"); 
+        // NetworkInterface nif = NetworkInterface.getByName("eno1");
         Enumeration<InetAddress> nifAddresses = nif.getInetAddresses();
         InetSocketAddress inetAddr= new InetSocketAddress(nifAddresses.nextElement().getHostAddress(),port); 
         // String ip = nifAddresses.nextElement().getHostAddress();
