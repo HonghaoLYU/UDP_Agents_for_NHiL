@@ -7,7 +7,7 @@ import java.net.*;
  *
  * @author Honghao
  */
-public class QuoteForwardAgentCoorTread {
+public class QuoteForwardAgentCoorThread {
 
     public static void main(String[] args) throws InterruptedException {
         final MyData data = new MyData();  
@@ -65,7 +65,7 @@ public class QuoteForwardAgentCoorTread {
 class MyData {  
     private String socketdata="hello";  
     public  synchronized void add(String args){  
-        socketdata = socketdata + args;  
+        socketdata = args;  
     }  
     public  synchronized String out(){
         return socketdata; 

@@ -65,7 +65,7 @@ public class QuoteForwardAgentTracThread {
 class MyData {  
     private String socketdata="hello";  
     public  synchronized void add(String args){  
-        socketdata = socketdata + args;  
+        socketdata = args;  
     }  
     public  synchronized String out(){
         return socketdata; 
