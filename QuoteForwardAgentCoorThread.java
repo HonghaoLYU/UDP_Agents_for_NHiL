@@ -10,7 +10,7 @@ import java.net.*;
 public class QuoteForwardAgentCoorThread {
 
     public static void main(String[] args) throws InterruptedException {
-
+        final MyData data = new MyData();
         DatagramSocket socket_in;
         DatagramSocket socket_out;
         try {
@@ -30,6 +30,7 @@ public class QuoteForwardAgentCoorThread {
             InetAddress clientAddress = InetAddress.getByName("192.168.30.55");
             int clientPort = 17;
             DatagramPacket response = new DatagramPacket(buffer, buffer.length, clientAddress, clientPort);
+            data.add(mag_recv);
             socket_out.send(response);
 
             String quote_msg_res = new String(buffer, 0, response.getLength());
@@ -41,7 +42,7 @@ public class QuoteForwardAgentCoorThread {
             System.out.println("I/O error: " + ex.getMessage());
         }
 
-        final MyData data = new MyData();  
+          
         for(int i=0;i<1;i++){  
             new Thread(new Runnable(){
                 DatagramSocket socket_in;  
