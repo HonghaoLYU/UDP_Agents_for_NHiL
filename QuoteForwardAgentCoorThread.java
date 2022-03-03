@@ -63,7 +63,7 @@ public class QuoteForwardAgentCoorThread {
 }
 
 class MyData {  
-    private String socketdata="hello";  
+    private String socketdata="";  
     public  synchronized void add(String args){  
         socketdata = args;  
     }  
