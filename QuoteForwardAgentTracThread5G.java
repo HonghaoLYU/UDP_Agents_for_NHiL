@@ -28,7 +28,7 @@ public class QuoteForwardAgentTracThread5G {
             socket_out = new DatagramSocket(107);
             byte[] buffer = mag_recv.getBytes();
             // InetAddress clientAddress = InetAddress.getByName("192.168.30.55"); // WiFi & Ethernet
-            InetAddress clientAddress = InetAddress.getByName("172.16.7.138"); // 5G
+            InetAddress clientAddress = InetAddress.getByName("172.16.9.47"); // 5G
             int clientPort = 107;
             DatagramPacket response = new DatagramPacket(buffer, buffer.length, clientAddress, clientPort);
             data.add(mag_recv);
@@ -77,7 +77,7 @@ public class QuoteForwardAgentTracThread5G {
                             socket_out = new DatagramSocket(107);
                             byte[] buffer = data.out().getBytes();
                             // InetAddress clientAddress = InetAddress.getByName("192.168.30.55"); // WiFi & Ethernet
-                            InetAddress clientAddress = InetAddress.getByName("172.16.7.138"); // 5G
+                            InetAddress clientAddress = InetAddress.getByName("172.16.9.47"); // 5G
                             int clientPort = 107;
                             DatagramPacket response = new DatagramPacket(buffer, buffer.length, clientAddress,
                                     clientPort);
