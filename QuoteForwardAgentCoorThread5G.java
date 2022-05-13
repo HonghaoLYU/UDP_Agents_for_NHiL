@@ -69,7 +69,7 @@ public class QuoteForwardAgentCoorThread5G {
             }).start();  
 
             new Thread(new Runnable(){ 
-                DatagramSocket socket_out;                
+                DatagramSocket socket_out;
                 public void run() { 
                     try{
                         while (true) {
