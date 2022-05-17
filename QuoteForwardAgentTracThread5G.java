@@ -60,11 +60,15 @@ public class QuoteForwardAgentTracThread5G {
                             System.out.println("client request msg recived: " + mag_recv);
                             data.add(mag_recv);
                             socket_in.close();
+                            Thread.sleep(20);
                         }
                     } catch (SocketException ex) {
                         System.out.println("Socket error: " + ex.getMessage());
                     } catch (IOException ex) {
                         System.out.println("I/O error: " + ex.getMessage());
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
                     }
                 }
             }).start();
