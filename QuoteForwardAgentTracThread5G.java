@@ -37,7 +37,7 @@ public class QuoteForwardAgentTracThread5G {
             String quote_msg_res = new String(buffer, 0, response.getLength());
             System.out.println(quote_msg_res);
             socket_out.close();
-            Thread.sleep(80);
+            Thread.sleep(200);
         } catch (SocketException ex) {
             System.out.println("Socket error: " + ex.getMessage());
         } catch (IOException ex) {
